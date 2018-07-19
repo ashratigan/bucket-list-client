@@ -14,7 +14,7 @@ This is the front-end for Bucket List, my first full-stack project. This is a si
 I will add some cool features. 
 
 ## Wireframes
-![Bucket List Wireframe](https://git.generalassemb.ly/ashratigan/full-stack-project-practice/blob/response/images/Bucketlist-Wireframe.001.jpeg)
+![Bucket List Wireframe](https://i.imgur.com/A2hi7hy.jpg)
 
 ## Updates
 Updates will come after project is complete.

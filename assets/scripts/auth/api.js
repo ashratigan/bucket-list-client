@@ -4,6 +4,7 @@ const config = require('../config')
 const store = require('../store')
 
 const signUp = function (data) {
+  console.log('sign up')
   return $.ajax({
     url: config.apiUrl + '/sign-up',
     method: 'POST',
@@ -40,32 +41,32 @@ const signOut = function () {
   })
 }
 
-const createGame = function (data) {
-  return $.ajax({
-    method: 'POST',
-    url: config.apiUrl + '/bucketlists/',
-    headers: {
-      Authorization: 'Token token=' + store.user.token
-    },
-    data: data
-  })
-}
+// const createGame = function (data) {
+//   return $.ajax({
+//     method: 'POST',
+//     url: config.apiUrl + '/bucketlists/',
+//     headers: {
+//       Authorization: 'Token token=' + store.user.token
+//     },
+//     data: data
+//   })
+// }
 
-const getGames = function () {
-  return $.ajax({
-    method: 'GET',
-    url: config.apiUrl + '/bucketlists/',
-    headers: {
-      Authorization: 'Token token=' + store.user.token
-    }
-  })
-}
+// const getGames = function () {
+//   return $.ajax({
+//     method: 'GET',
+//     url: config.apiUrl + '/bucketlists/',
+//     headers: {
+//       Authorization: 'Token token=' + store.user.token
+//     }
+//   })
+// }
 
 module.exports = {
   signUp,
   signIn,
   changePassword,
   signOut,
-  createGame,
-  getGames
+  // createGame,
+  // getGames
 }

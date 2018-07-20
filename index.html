@@ -1,98 +1,100 @@
 <!DOCTYPE html>
 <html>
-    <head>
-      <title>Bucket List</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <title>Bucket List</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `link` tags-->
-      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <!-- Do not add `link` tags-->
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
-      <!-- Do not add `script` tags-->
-      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
-      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
-    </head>
-    <body>
-      <h1>Bucket List</h1>
-<body>
-  <!-- HEADER -->
-  <header class="masthead text-white text-center">
-    <div class="welcome">
-      <h1>Bucket list</h1>
-      <div class="sign-inup-buttons">
-        <button type="button" class="button">
-          <a href="#sign-up">Sign up</a>
-        </button>
-        <button type="button" class="button">
-          <a href="#signIn">Sign in</a>
-        </button>
+    <!-- Do not add `script` tags-->
+    <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+    <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+  </head>
+
+  <body>
+    <!-- HEADER -->
+    <header class="masthead text-white text-center">
+      <div class="welcome">
+        <h1>Bucket list</h1>
+        <div class="sign-inup-buttons">
+          <button type="button" class="button">
+            <a href="#sign-up">Sign up</a>
+          </button>
+          <button type="button" class="button">
+            <a href="#signIn">Sign in</a>
+          </button>
+        </div>
+      </div>
+    </header>
+    <!-- End Header -->
+    <!-- Hidden Divs -->
+    <div class='signInUp'>
+      <div id="signUp">
+        <form id="sign-up">
+          <fieldset>
+            <h2>Sign Up!</h2>
+            <input type="email" name="credentials[email]" placeholder="Email">
+            <br>
+            <input type="password" name="credentials[password]" placeholder="Password">
+            <br>
+            <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
+            <br>
+            <input type="submit" value="Sign Up!">
+          </fieldset>
+        </form>
+      </div>
+
+      <div id="signIn">
+        <form id="sign-in">
+          <fieldset>
+            <h2>Sign In!</h2>
+            <input type="text" name="credentials[email]" placeholder="Email">
+            <br>
+            <input type="password" name="credentials[password]" placeholder="Password">
+            <br>
+            <input type="submit" value="Sign In!">
+          </fieldset>
+        </form>
       </div>
     </div>
-  </header>
-  <!-- End Header -->
-  <!-- Hidden Divs -->
-  <div class='signInUp'>
-    <div id="signUp">
-      <form id="sign-up">
-        <fieldset>
-          <h2>Sign Up!</h2>
-          <input type="email" name="credentials[email]" placeholder="Email">
-          <br>
-          <input type="password" name="credentials[password]" placeholder="Password">
-          <br>
-          <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
-          <br>
-          <input type="submit" value="Sign Up!">
-        </fieldset>
-      </form>
-    </div>
+    <!-- End Hidden Divs -->
 
-    <div id="signIn">
-      <form id="sign-in">
-        <fieldset>
-          <h2>Sign In!</h2>
-          <input type="text" name="credentials[email]" placeholder="Email">
-          <br>
-          <input type="password" name="credentials[password]" placeholder="Password">
-          <br>
-          <input type="submit" value="Sign In!">
-        </fieldset>
-      </form>
-    </div>
-  </div>
-  <!-- End Hidden Divs -->
+    <!-- MESSAGE FOR USERS ON SIGN IN/UP -->
+    <div id='userMessage'></div>
+    <!-- MESSAGE END -->
 
-  <!-- User info -->
-  <div class='userInfo'>
-    <button class='button' id='changePassword'>Change Password</button>
-    <button class='button' id='getGames'>Old Games</button>
-    <form id="sign-out">
-      <input type="submit" class='button' value="Sign Out!">
-    </form>
-    <div>
-      <form id="change-password" class="border">
-        <fieldset>
-          <h3>Change Password</h3>
-          <input type="password" name="passwords[old]" placeholder="Old Password">
-          <br>
-          <input type="password" name="passwords[new]" placeholder="New Password">
-          <br>
-          <br>
-          <input type="submit" value="Change Password">
-        </fieldset>
-      </form>
-      <div id="changedPassword"></div>
-    </div>
-    <div id='view-games'>
-      <h3>Previous Games</h3>
-    </div>
-  </div>
-  <!-- End User info -->
+    <!-- BUTTON TO SEE USER INFO -->
+    <button class='button' id='seeInfo'>See User Info</button> 
+    <!-- BUTTON END -->
 
-  <!-- Footer -->
-  <footer>
-    <p>Made by Ashley - 2018</p>
-  </footer>
-  <!-- End footer -->
-</body>
-    </body>
+    <!-- User info -->
+    <div class='userInfo'>
+      <button class='button' id='changePasswordButton'>Change Password</button>
+      <form id="sign-out">
+        <input type="submit" class='button' value="Sign Out!">
+      </form>
+      <div>
+        <form id="change-password-form" class="border">
+          <fieldset>
+            <h3>Change Password</h3>
+            <input type="password" name="passwords[old]" placeholder="Old Password">
+            <br>
+            <input type="password" name="passwords[new]" placeholder="New Password">
+            <br>
+            <br>
+            <input type="submit" value="Change Password">
+          </fieldset>
+        </form>
+        <div id="changedPasswordMessage"></div>
+      </div>
+    </div>
+    <!-- End User info -->
+
+    <!-- Footer -->
+    <footer>
+      <p>Made by Ashley - 2018</p>
+    </footer>
+    <!-- End footer -->
+  </body>
 </html>

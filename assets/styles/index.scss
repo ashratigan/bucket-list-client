@@ -1,2 +1,51 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
+
+// **********************
+// SETTINGS FOR sign in / sign up
+// **********************
+.signInUp {
+  height: 75%;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #aaa;
+}
+
+input {
+  margin: 2px;
+}
+
+#sign-up {
+  padding: 20px;
+}
+
+#sign-in {
+  padding: 20px;
+}
+
+// **********************		
+// SETTINGS FOR CHANGE PASSWORD		
+// **********************		
+#change-password-form {
+  margin: 5px;
+  color: #aaa;
+  display: none;
+}
+
+#changedPassword {
+  margin-top: 10px;
+  height: 15%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-size: 24px;
+}
+
+.userInfo {
+    display: none;
+}
+
+#seeInfo {
+    display: none;
+}

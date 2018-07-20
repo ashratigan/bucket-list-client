@@ -21,6 +21,7 @@ const signIn = function (data) {
 }
 
 const changePassword = function (data) {
+  console.log('change password api')
   return $.ajax({
     url: config.apiUrl + '/change-password',
     method: 'PATCH',
@@ -66,7 +67,7 @@ module.exports = {
   signUp,
   signIn,
   changePassword,
-  signOut,
+  signOut
   // createGame,
   // getGames
 }

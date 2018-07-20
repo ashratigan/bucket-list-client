@@ -71,7 +71,7 @@ const onSignOut = function (event) {
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
-  $('#change-password').on('submit', onChangePassword)
+  $('#change-password-form').on('submit', onChangePassword)
   $('#sign-out').on('submit', onSignOut)
   // $('#newGame').on('click', onCreateGame)
   // $('.col1, .col2, .col3').on('click', onMoves)

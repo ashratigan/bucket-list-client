@@ -12,16 +12,17 @@ const signInSuccess = function (data) {
   $('#userMessage').text('Signed in successfully')
   $('.signInUp').css('display', 'none')
   $('.sign-inup-buttons').css('display', 'none')
+  $('#seeInfo').css('display', 'block')
   $('#sign-in')[0].reset()
   console.log('sign in success')
   store.user = data.user
 }
 
 const changePasswordSuccess = function (data) {
-  $('#changedPassword').text('Password changed successfully')
-  $('#changedPassword').delay(3200).fadeOut(300)
-  $('#change-password').css('display', 'none')
-  $('#change-password')[0].reset()
+  $('#changedPasswordMessage').text('Password changed successfully')
+  $('#changedPasswordMessage').delay(3200).fadeOut(300)
+  $('#change-password-form').css('display', 'none')
+  $('#change-password-form')[0].reset()
   console.log('change password success')
 }
 

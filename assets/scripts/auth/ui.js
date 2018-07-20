@@ -43,8 +43,12 @@ const createSuccess = function (data) {
 const getBukectlistsSuccess = function (data) {
   // $('.displayedBucketlists').append('<p>Bucket lists ' + data.bucketlists.id)
   // $('.displayedBucketlists').append('<p>Bucket lists ' + data.bucketlists.id.bl_name)
+  
   for (let i = 0; i < data.bucketlists.length; i++) {
-    $('.displayedBucketlists').append('<p><b>NAME:</b>' + data.bucketlists[i].bl_name + '    <br/>' + data.bucketlists[i].task + '</p><br/>')
+    const taskList = data.bucketlists[i].task.split(',')
+    console.log(taskList)
+    console.log(`ui task data is ${data.bucketlists[i].task}`)
+    $('.displayedBucketlists').append('<p><b>NAME:</b>' + data.bucketlists[i].bl_name + '    <br/>' + taskList + '<br/></p><br/>')
     // $('.displayedBucketlists').append('<p><b>ID:</b>' + data.bucketlists[i].id + '    <b>Game Squares</b>' + data.bucketlists[i].task + '</p>')
     // console.log(data.games[i])
   }
@@ -54,6 +58,8 @@ const getBukectlistsSuccess = function (data) {
   console.log(`ui data is ${data.bucketlists}`)
   console.log(`ui data is ${data.bucketlists.id}`)
 }
+
+// task_list = task.split(',')
 
 const failure = function (error) {
   $('#userMessage').text('Error')

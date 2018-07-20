@@ -63,11 +63,22 @@ const getBucketlists = function () {
   })
 }
 
+const deleteBucketlist = (bucketlistId) => {
+  return $.ajax({
+    url: config.apiUrl + '/bucketlists/' + bucketlistId,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
   changePassword,
   signOut,
   createBucketlist,
-  getBucketlists
+  getBucketlists,
+  deleteBucketlist
 }

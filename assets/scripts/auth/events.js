@@ -70,6 +70,14 @@ const onGetBucketlists = function (event) {
     .catch(ui.getBukectlistsSuccess)
 }
 
+const onDeleteBucketlists = (event) => {
+  event.preventDefault()
+  const bucketlistId = $(event.target).closest('ul').attr('data-id')
+  api.deleteBucketlist(bucketlistId)
+    .then(() => onGetBucketlists(event))
+    .catch(ui.failure)
+}
+
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
@@ -78,6 +86,7 @@ const addHandlers = () => {
   $('#bucketlist-form').on('submit', onCreateBucketlist)
   // $('.col1, .col2, .col3').on('click', onMoves)
   $('#seeBucketlists').one('click', onGetBucketlists)
+  $('.displayedBucketlists').on('click', 'button', onDeleteBucketlists)
 }
 
 module.exports = {

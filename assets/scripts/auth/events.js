@@ -47,7 +47,10 @@ const onSignOut = function (event) {
 const onCreateBucketlist = function (event) {
   event.preventDefault()
 
-  api.createBucketlist()
+  const data = getFormFields(this)
+  console.log(`events data is ${data}`)
+
+  api.createBucketlist(data)
     .then(ui.createSuccess)
     .catch(ui.createSuccess)
 }
@@ -72,7 +75,7 @@ const addHandlers = () => {
   $('#sign-in').on('submit', onSignIn)
   $('#change-password-form').on('submit', onChangePassword)
   $('#sign-out').on('submit', onSignOut)
-  $('#bucketlist-form').on('click', onCreateBucketlist)
+  $('#bucketlist-form').on('submit', onCreateBucketlist)
   // $('.col1, .col2, .col3').on('click', onMoves)
   $('#seeBucketlists').one('click', onGetBucketlists)
 }

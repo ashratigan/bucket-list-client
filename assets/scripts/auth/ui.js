@@ -35,10 +35,8 @@ const signOutSuccess = function () {
 }
 
 const createSuccess = function (data) {
-  console.log(`data is ${data}`)
-  console.log(`data.id is ${data.id}`)
   console.log(`data.bucketlist is ${data.bucketlists}`)
-  store.bucketlist = data.bucketlist
+  store.bucketlist = data.bucketlists
   // store.game.id = data.game.id
 }
 

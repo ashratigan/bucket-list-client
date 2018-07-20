@@ -44,14 +44,13 @@ const onSignOut = function (event) {
     .catch(ui.failure)
 }
 
-// const onCreateGame = function (event) {
-//   event.preventDefault()
-//   game.startGame()
+const onCreateBucketlist = function (event) {
+  event.preventDefault()
 
-//   api.createGame()
-//     .then(ui.createSuccess)
-//     .catch(ui.createSuccess)
-// }
+  api.createBucketlist()
+    .then(ui.createSuccess)
+    .catch(ui.createSuccess)
+}
 
 // const onMoves = function (event) {
 //   event.preventDefault()
@@ -61,21 +60,21 @@ const onSignOut = function (event) {
 //     .catch(ui.movesSuccess)
 // }
 
-// const onGetGames = function (event) {
-//   event.preventDefault()
-//   api.getGames()
-//     .then(ui.getGamesSuccess)
-//     .catch(ui.getGamesSuccess)
-// }
+const onGetBucketlists = function (event) {
+  event.preventDefault()
+  api.getBucketlists()
+    .then(ui.getBukectlistsSuccess)
+    .catch(ui.getBukectlistsSuccess)
+}
 
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
   $('#change-password-form').on('submit', onChangePassword)
   $('#sign-out').on('submit', onSignOut)
-  // $('#newGame').on('click', onCreateGame)
+  $('#bucketlist-form').on('click', onCreateBucketlist)
   // $('.col1, .col2, .col3').on('click', onMoves)
-  // $('#getGames').one('click', onGetGames)
+  $('#seeBucketlists').one('click', onGetBucketlists)
 }
 
 module.exports = {

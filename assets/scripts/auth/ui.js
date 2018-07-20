@@ -34,18 +34,28 @@ const signOutSuccess = function () {
   store.user = null
 }
 
-// const createSuccess = function (data) {
-//   $('#gameboard').css('display', 'block')
-//   store.game = data.game
-//   store.game.id = data.game.id
-// }
+const createSuccess = function (data) {
+  console.log(`data is ${data}`)
+  console.log(`data.id is ${data.id}`)
+  console.log(`data.bucketlist is ${data.bucketlists}`)
+  store.bucketlist = data.bucketlist
+  // store.game.id = data.game.id
+}
 
-// const getGamesSuccess = function (data) {
-//   for (let i = 0; i < data.games.length; i++) {
-//     $('#view-games').append('<p><b>ID:</b>' + data.games[i].id + '    <b>Game Squares</b>' + data.games[i].cells + '</p>')
-//     // console.log(data.games[i])
-//   }
-// }
+const getBukectlistsSuccess = function (data) {
+  // $('.displayedBucketlists').append('<p>Bucket lists ' + data.bucketlists.id)
+  // $('.displayedBucketlists').append('<p>Bucket lists ' + data.bucketlists.id.bl_name)
+  for (let i = 0; i < data.bucketlists.length; i++) {
+    $('.displayedBucketlists').append('<p><b>NAME:</b>' + data.bucketlists[i].bl_name + '    <br/>' + data.bucketlists[i].task + '</p><br/>')
+    // $('.displayedBucketlists').append('<p><b>ID:</b>' + data.bucketlists[i].id + '    <b>Game Squares</b>' + data.bucketlists[i].task + '</p>')
+    // console.log(data.games[i])
+  }
+  console.log(`ui data is ${data}`)
+  // console.log(`ui data is ${data.id}`)
+  // console.log(`ui data is ${data.bucketlist}`)
+  console.log(`ui data is ${data.bucketlists}`)
+  console.log(`ui data is ${data.bucketlists.id}`)
+}
 
 const failure = function (error) {
   $('#userMessage').text('Error')
@@ -58,7 +68,7 @@ module.exports = {
   signInSuccess,
   changePasswordSuccess,
   signOutSuccess,
-  // createSuccess,
-  // getGamesSuccess,
+  createSuccess,
+  getBukectlistsSuccess,
   failure
 }

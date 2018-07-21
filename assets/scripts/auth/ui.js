@@ -1,7 +1,7 @@
 'use strict'
 
 const store = require('../store')
-const showBucketlistsTemplate = require('../templates/bucketlist.handlebars')
+// const showBucketlistsTemplate = require('../templates/bucketlist.handlebars')
 
 const signUpSuccess = function (data) {
   $('#userMessage').text('Signed up successfully')

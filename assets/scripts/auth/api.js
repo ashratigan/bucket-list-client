@@ -95,11 +95,6 @@ module.exports = {
   signOut,
   createBucketlist,
   getBucketlists,
-<<<<<<< HEAD
-  deleteBucketlist,
-  updateBucketlist
-=======
   updateBucketlist,
   deleteBucketlist
->>>>>>> bucketlistapi
 }

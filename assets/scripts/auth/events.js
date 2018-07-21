@@ -73,9 +73,9 @@ const onUpdateBucketlist = function (event) {
   // return false
   // }
   // if (book.id.length !== 0) {
-    api.updateBucketlist(data)
-      .then(ui.updateBukectlistsSuccess)
-      .catch(ui.failure)
+  api.updateBucketlist(data)
+    .then(ui.updateBukectlistsSuccess)
+    .catch(ui.failure)
   // } else {
     // console.log('Please provide a book id!')
   // }
@@ -94,37 +94,37 @@ const onDeleteBucketlist = function (event) {
   const data = getFormFields(event.target)
   // const book = data.book
   // if (book.id.length !== 0) {
-    api.deleteBucketlist(data)
-      .then(ui.updateBukectlistsSuccess)
-      .catch(ui.failure)
+  api.deleteBucketlist(data)
+    .then(ui.updateBukectlistsSuccess)
+    .catch(ui.failure)
   // } else {
     // console.log('Please provide a book id!')
   // }
 }
 
-const onDeleteBucketlists = (event) => {
-  event.preventDefault()
-  const bucketlistId = $(event.target).closest('ul').attr('data-id')
-  api.deleteBucketlist(bucketlistId)
-    .then(() => onGetBucketlists(event))
-    .catch(ui.failure)
-}
+// const onDeleteBucketlists = (event) => {
+//   event.preventDefault()
+//   const bucketlistId = $(event.target).closest('ul').attr('data-id')
+//   api.deleteBucketlist(bucketlistId)
+//     .then(() => onGetBucketlists(event))
+//     .catch(ui.failure)
+// }
 
-const onUpdateBucketlist = function (event) {
-  event.preventDefault()
-  const data = getFormFields(this)
-  const bucketlistId = data.bucketlist.id
-  // const bucketlistId = $(event.target).closest('ul').attr('data-id')
-  // if (bucketlist.name === '') {
-  //   // alert('title required')
-  //   $('#content').html('<p>Namee is required</p>')
-  //   $('#content').css('background-color', 'red')
-  //   return false
-  // }
-  api.updateBucketlist(bucketlistId, data)
-    .then(ui.updateBukectlistsSuccess)
-    .catch(ui.updateBukectlistsSuccess)
-}
+// const onUpdateBucketlist = function (event) {
+//   event.preventDefault()
+//   const data = getFormFields(this)
+//   const bucketlistId = data.bucketlist.id
+//   // const bucketlistId = $(event.target).closest('ul').attr('data-id')
+//   // if (bucketlist.name === '') {
+//   //   // alert('title required')
+//   //   $('#content').html('<p>Namee is required</p>')
+//   //   $('#content').css('background-color', 'red')
+//   //   return false
+//   // }
+//   api.updateBucketlist(bucketlistId, data)
+//     .then(ui.updateBukectlistsSuccess)
+//     .catch(ui.updateBukectlistsSuccess)
+// }
 
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp)

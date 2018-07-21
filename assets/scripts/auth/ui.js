@@ -40,6 +40,7 @@ const signOutSuccess = function () {
 const createSuccess = function (data) {
   console.log(`data.bucketlist is ${data.bucketlists}`)
   store.bucketlist = data.bucketlists
+  $('#bucketlist-form')[0].reset()
   // store.game.id = data.game.id
 }
 
@@ -65,6 +66,7 @@ const getBukectlistsSuccess = function (data) {
 const updateBucketlistSuccess = function (data) {
   console.log(`data.bucketlist is ${data.bucketlists}`)
   store.bucketlist = data.bucketlists
+  $('#book-update')[0].reset()
   console.log('You successfully updated the book!')
   // const bucketlistHTML = (`
   //   <h4>Name: ${data.bucketlist.name}</h4>

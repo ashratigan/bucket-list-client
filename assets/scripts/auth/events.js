@@ -81,14 +81,15 @@ const onDeleteBucketlists = (event) => {
 const onUpdateBucketlist = function (event) {
   event.preventDefault()
   const data = getFormFields(this)
-  const bucketlistId = $(event.target).closest('ul').attr('data-id')
+  const bucketlistId = data.bucketlist.id
+  // const bucketlistId = $(event.target).closest('ul').attr('data-id')
   // if (bucketlist.name === '') {
   //   // alert('title required')
   //   $('#content').html('<p>Namee is required</p>')
   //   $('#content').css('background-color', 'red')
   //   return false
   // }
-  api.updateBucketlist(data, bucketlistId)
+  api.updateBucketlist(bucketlistId, data)
     .then(ui.updateBukectlistsSuccess)
     .catch(ui.updateBukectlistsSuccess)
 }

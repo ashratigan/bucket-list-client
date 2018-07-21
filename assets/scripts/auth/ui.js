@@ -46,16 +46,15 @@ const createSuccess = function (data) {
 const getBukectlistsSuccess = function (data) {
   // $('.displayedBucketlists').append('<p>Bucket lists ' + data.bucketlists.id)
   // $('.displayedBucketlists').append('<p>Bucket lists ' + data.bucketlists.id.bl_name)
-  const showBucketlistsHtml = showBucketlistsTemplate({ bucketlists: data.bucketlists })
-  $('.displayedBucketlists').html(showBucketlistsHtml)
-  // for (let i = 0; i < data.bucketlists.length; i++) {
-  //   const taskList = data.bucketlists[i].task.split(',')
-  //   console.log(taskList)
-  //   console.log(`ui task data is ${data.bucketlists[i].task}`)
-  //   $('.displayedBucketlists').append('<p><b>NAME:</b>' + data.bucketlists[i].bl_name + '    <br/>' + taskList + '<br/></p><br/>')
-  //   // $('.displayedBucketlists').append('<p><b>ID:</b>' + data.bucketlists[i].id + '    <b>Game Squares</b>' + data.bucketlists[i].task + '</p>')
-  //   // console.log(data.games[i])
-  // }
+
+  for (let i = 0; i < data.bucketlists.length; i++) {
+    const taskList = data.bucketlists[i].task.split(',')
+    console.log(taskList)
+    console.log(`ui task data is ${data.bucketlists[i].task}`)
+    $('.displayedBucketlists').append('<p><b>NAME:</b>' + data.bucketlists[i].bl_name + '    <br/>' + taskList + '<br/></p><br/>')
+    // $('.displayedBucketlists').append('<p><b>ID:</b>' + data.bucketlists[i].id + '    <b>Game Squares</b>' + data.bucketlists[i].task + '</p>')
+    // console.log(data.games[i])
+  }
   console.log(`ui data is ${data}`)
   // console.log(`ui data is ${data.id}`)
   // console.log(`ui data is ${data.bucketlist}`)
@@ -74,6 +73,14 @@ const updateBucketlistSuccess = function (data) {
   // `)
 
   // $('.displayedBucketlists').html(bucketlistHTML)
+  console.log('You successfully updated the book!')
+  const bookHTML = (`
+    <h4>Title: ${data.bucketlists.name}</h4>
+    <p>Author: ${data.bucketlists.task}</p>
+    <br>
+  `)
+
+  $('#content').html(bookHTML)
 }
 
 const failure = function (error) {

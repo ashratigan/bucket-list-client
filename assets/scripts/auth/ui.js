@@ -20,6 +20,7 @@ const signInSuccess = function (data) {
   $('#landing').css('display', 'none')
   $('#seeInfo').css('display', 'block')
   $('.bucketList').css('display', 'block')
+  $('.bldisplay').css('padding-top', '50px')
   $('#sign-in')[0].reset()
   console.log('sign in success')
   store.user = data.user
@@ -41,6 +42,7 @@ const signOutSuccess = function () {
   $('.bucketList').css('display', 'none')
   $('#landing').css('display', 'block')
   $('.sign-inup-buttons').css('display', 'block')
+  $('.bldisplay').css('padding-top', '40vh')
   store.user = null
 }
 
@@ -57,9 +59,9 @@ const createSuccess = function (data) {
 const getBukectlistsSuccess = function (data) {
   for (let i = 0; i < data.bucketlists.length; i++) {
     const taskList = data.bucketlists[i].task.split(',')
-    $('.displayedBucketlists').append('<p><i>ID:' + data.bucketlists[i].id + '</i><br/><b>' + data.bucketlists[i].bl_name + '</b><br/>')
+    $('.displayedBucketlists').append('<h1>' + data.bucketlists[i].bl_name + '<span style="font-size:12px;float:rightt;"><i> ID:' + data.bucketlists[i].id + '</i></span></h1><br/>')
     for (let i = 0; i < taskList.length; i++) {
-      $('.displayedBucketlists').append(taskList[i] + '<br/></p><br/>')
+      $('.displayedBucketlists').append('<ul><li>' + taskList[i] + '</li></ul><br/>')
     }
     console.log(taskList)
     console.log(`ui task data is ${data.bucketlists[i].task}`)

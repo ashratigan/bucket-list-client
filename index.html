@@ -7,6 +7,9 @@
     <!-- Do not add `link` tags-->
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+
     <!-- Do not add `script` tags-->
     <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
     <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
@@ -42,14 +45,42 @@
     <!-- ************************************** -->
     <div class="bldisplay">
       <div id="container">
-        <h1>My Travel Bucket List <b>+</b></h1>
-        <input type="text" placeholder="Add New Todo">
-        <ul>
-          <li>Go to Riga, Latvia</li>
-          <li>Cross the Arctic Cirlce</li>
-          <li>Ride a Camel in the Sahara</li>
-          <li>Climb Mount Everest</li>
-        </ul>
+        <div class="row">
+          <div class="col-sm">
+            <h1>My Travel Bucket List <b>+</b></h1>
+            <input type="text" placeholder="Add New Todo">
+            <ul>
+              <li>Go to Riga, Latvia</li>
+              <li>Cross the Arctic Cirlce</li>
+              <li>Ride a Camel in the Sahara</li>
+              <li>Climb Mount Everest</li>
+            </ul>
+          </div>
+          <div class="col-sm">
+            <h1>My Travel Bucket List
+              <b>+</b>
+            </h1>
+            <input type="text" placeholder="Add New Todo">
+            <ul>
+              <li>Go to Riga, Latvia</li>
+              <li>Cross the Arctic Cirlce</li>
+              <li>Ride a Camel in the Sahara</li>
+              <li>Climb Mount Everest</li>
+            </ul>
+          </div>
+          <div class="col-sm">
+            <h1>My Travel Bucket List
+              <b>+</b>
+            </h1>
+            <input type="text" placeholder="Add New Todo">
+            <ul>
+              <li>Go to Riga, Latvia</li>
+              <li>Cross the Arctic Cirlce</li>
+              <li>Ride a Camel in the Sahara</li>
+              <li>Climb Mount Everest</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>  
     <!-- ************************************** -->
@@ -61,7 +92,15 @@
       
       <h3>Your bucketlists!</h3>
       <button class='btn btn-default' id='seeBucketlists'> See Bucketlists </button>
-      <div class="displayedBucketlists"></div>
+      <div class="bldisplay">
+        <div id="container">
+          <!-- <div class="row"> -->
+            <!-- <div class="col-sm"> -->
+              <div class="displayedBucketlists"></div>
+            <!-- </div> -->
+          <!-- </div> -->
+        </div>
+      </div>
 
       <form id="bucketlist-form" class="forms">
         <fieldset>

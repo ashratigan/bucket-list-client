@@ -57,9 +57,13 @@ const createSuccess = function (data) {
 const getBukectlistsSuccess = function (data) {
   for (let i = 0; i < data.bucketlists.length; i++) {
     const taskList = data.bucketlists[i].task.split(',')
+    $('.displayedBucketlists').append('<p><i>ID:' + data.bucketlists[i].id + '</i><br/><b>' + data.bucketlists[i].bl_name + '</b><br/>')
+    for (let i = 0; i < taskList.length; i++) {
+      $('.displayedBucketlists').append(taskList[i] + '<br/></p><br/>')
+    }
     console.log(taskList)
     console.log(`ui task data is ${data.bucketlists[i].task}`)
-    $('.displayedBucketlists').append('<p><i>ID:' + data.bucketlists[i].id + '</i><br/><b>' + data.bucketlists[i].bl_name + '</b><br/>' + taskList + '<br/></p><br/>')
+    // $('.displayedBucketlists').append('<p><i>ID:' + data.bucketlists[i].id + '</i><br/><b>' + data.bucketlists[i].bl_name + '</b><br/>' + taskList + '<br/></p><br/>')
   }
   console.log(`ui data is ${data}`)
   console.log(`ui data is ${data.bucketlists}`)

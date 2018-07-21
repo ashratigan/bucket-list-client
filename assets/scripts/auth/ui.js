@@ -3,6 +3,10 @@
 const store = require('../store')
 // const showBucketlistsTemplate = require('../templates/bucketlist.handlebars')
 
+// *****************************
+// Ui for user
+// *****************************
+
 const signUpSuccess = function (data) {
   $('#userMessage').text('Signed up successfully')
   $('#sign-up')[0].reset()
@@ -37,28 +41,24 @@ const signOutSuccess = function () {
   store.user = null
 }
 
+// *****************************
+// Ui for bucketlist
+// *****************************
+
 const createSuccess = function (data) {
   console.log(`data.bucketlist is ${data.bucketlists}`)
   store.bucketlist = data.bucketlists
   $('#bucketlist-form')[0].reset()
-  // store.game.id = data.game.id
 }
 
 const getBukectlistsSuccess = function (data) {
-  // $('.displayedBucketlists').append('<p>Bucket lists ' + data.bucketlists.id)
-  // $('.displayedBucketlists').append('<p>Bucket lists ' + data.bucketlists.id.bl_name)
-
   for (let i = 0; i < data.bucketlists.length; i++) {
     const taskList = data.bucketlists[i].task.split(',')
     console.log(taskList)
     console.log(`ui task data is ${data.bucketlists[i].task}`)
-    $('.displayedBucketlists').append('<p><b>NAME:</b>' + data.bucketlists[i].bl_name + '    <br/>' + taskList + '<br/></p><br/>')
-    // $('.displayedBucketlists').append('<p><b>ID:</b>' + data.bucketlists[i].id + '    <b>Game Squares</b>' + data.bucketlists[i].task + '</p>')
-    // console.log(data.games[i])
+    $('.displayedBucketlists').append('<p><i>ID:' + data.bucketlists[i].id + '</i><br/><b>NAME:</b>' + data.bucketlists[i].bl_name + '    <br/>' + taskList + '<br/></p><br/>')
   }
   console.log(`ui data is ${data}`)
-  // console.log(`ui data is ${data.id}`)
-  // console.log(`ui data is ${data.bucketlist}`)
   console.log(`ui data is ${data.bucketlists}`)
   console.log(`ui data is ${data.bucketlists.id}`)
 }
@@ -68,7 +68,6 @@ const updateBucketlistSuccess = function (data) {
   store.bucketlist = data.bucketlists
   $('#bucketlist-update')[0].reset()
   console.log('You successfully updated the bucketlist!')
-
   // const bookHTML = (`
   //   <h4>Title: ${data.bucketlists.name}</h4>
   //   <p>Author: ${data.bucketlists.task}</p>

@@ -37,6 +37,9 @@ const signOutSuccess = function () {
   $('#userMessage').text('Signed out successfully')
   $('.signInUp').css('display', 'block')
   $('.userInfo').css('display', 'none')
+  $('#seeInfo').css('display', 'none')
+  $('.bucketList').css('display', 'none')
+  $('#landing').css('display', 'block')
   $('.sign-inup-buttons').css('display', 'block')
   store.user = null
 }

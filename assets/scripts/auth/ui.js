@@ -61,7 +61,18 @@ const getBukectlistsSuccess = function (data) {
   console.log(`ui data is ${data.bucketlists.id}`)
 }
 
-// task_list = task.split(',')
+const updateBucketlistSuccess = function (data) {
+  console.log(`data.bucketlist is ${data.bucketlists}`)
+  store.bucketlist = data.bucketlists
+  console.log('You successfully updated the book!')
+  // const bucketlistHTML = (`
+  //   <h4>Name: ${data.bucketlist.name}</h4>
+  //   <p>Tasks: ${data.bucketlist.task}</p>
+  //   <br>
+  // `)
+
+  // $('.displayedBucketlists').html(bucketlistHTML)
+}
 
 const failure = function (error) {
   $('#userMessage').text('Error')
@@ -76,5 +87,6 @@ module.exports = {
   signOutSuccess,
   createSuccess,
   getBukectlistsSuccess,
+  updateBucketlistSuccess,
   failure
 }

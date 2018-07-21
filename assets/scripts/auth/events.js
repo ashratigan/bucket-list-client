@@ -78,6 +78,21 @@ const onDeleteBucketlists = (event) => {
     .catch(ui.failure)
 }
 
+const onUpdateBucketlist = function (event) {
+  event.preventDefault()
+  const data = getFormFields(this)
+  const bucketlistId = $(event.target).closest('ul').attr('data-id')
+  // if (bucketlist.name === '') {
+  //   // alert('title required')
+  //   $('#content').html('<p>Namee is required</p>')
+  //   $('#content').css('background-color', 'red')
+  //   return false
+  // }
+  api.updateBucketlist(data, bucketlistId)
+    .then(ui.updateBukectlistsSuccess)
+    .catch(ui.updateBukectlistsSuccess)
+}
+
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
@@ -87,6 +102,7 @@ const addHandlers = () => {
   // $('.col1, .col2, .col3').on('click', onMoves)
   $('#seeBucketlists').one('click', onGetBucketlists)
   $('.displayedBucketlists').on('click', 'button', onDeleteBucketlists)
+  $('.bucketlist-update-form').on('submit', onUpdateBucketlist)
 }
 
 module.exports = {

@@ -46,6 +46,12 @@ const onSignOut = function (event) {
 // *****************************
 // Events for bucketlist
 // *****************************
+const onGetBucketlists = function (event) {
+  event.preventDefault()
+  api.getBucketlists()
+    .then(ui.getBukectlistsSuccess)
+    .catch(ui.failure)
+}
 
 const onCreateBucketlist = function (event) {
   event.preventDefault()
@@ -54,14 +60,7 @@ const onCreateBucketlist = function (event) {
   console.log(`events data is ${data}`)
 
   api.createBucketlist(data)
-    .then(ui.createSuccess)
-    .catch(ui.failure)
-}
-
-const onGetBucketlists = function (event) {
-  event.preventDefault()
-  api.getBucketlists()
-    .then(ui.getBukectlistsSuccess)
+    .then(() => onGetBucketlists(event))
     .catch(ui.failure)
 }
 

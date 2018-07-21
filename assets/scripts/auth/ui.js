@@ -72,6 +72,7 @@ const getBukectlistsSuccess = function (data) {
   console.log(`ui data is ${data.bucketlists}`)
   console.log(`ui data is ${data.bucketlists.id}`)
   $('#bucketlist-update')[0].reset()
+  $('#bucketlist-form')[0].reset()
   store.bucketlist = data.bucketlists
 }
 

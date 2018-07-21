@@ -5,7 +5,7 @@ This is the front-end for Bucket List, my first independent full-stack project. 
 
 Check out my deployed site: https://ashratigan.github.io/bucket-list-client/
 
-The back end is hosted on Heroku: https://thawing-anchorage-52719.herokuapp.com//sign-up
+The back end is hosted on Heroku: https://thawing-anchorage-52719.herokuapp.com/
 
 ## Technologies used
 - HTML

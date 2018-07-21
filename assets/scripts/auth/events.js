@@ -77,7 +77,8 @@ const onUpdateBucketlist = function (event) {
   // }
   // if (book.id.length !== 0) {
   api.updateBucketlist(data)
-    .then(ui.updateBucketlistSuccess)
+    // .then(ui.updateBucketlistSuccess)
+    .then(() => onGetBucketlists(event))
     .catch(ui.failure)
   // } else {
     // console.log('Please provide a book id!')
@@ -90,7 +91,7 @@ const onDeleteBucketlist = function (event) {
   // const book = data.book
   // if (book.id.length !== 0) {
   api.deleteBucketlist(data)
-    .then(ui.updateBukectlistsSuccess)
+    .then(() => onGetBucketlists(event))
     .catch(ui.failure)
   // } else {
     // console.log('Please provide a book id!')

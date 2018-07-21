@@ -57,6 +57,7 @@ const createSuccess = function (data) {
 }
 
 const getBukectlistsSuccess = function (data) {
+  $('.displayedBucketlists').empty()
   for (let i = 0; i < data.bucketlists.length; i++) {
     const taskList = data.bucketlists[i].task.split(',')
     $('.displayedBucketlists').append('<h1>' + data.bucketlists[i].bl_name + '<span style="font-size:12px;float:rightt;"><i> ID:' + data.bucketlists[i].id + '</i></span></h1><br/>')
@@ -70,20 +71,15 @@ const getBukectlistsSuccess = function (data) {
   console.log(`ui data is ${data}`)
   console.log(`ui data is ${data.bucketlists}`)
   console.log(`ui data is ${data.bucketlists.id}`)
+  $('#bucketlist-update')[0].reset()
+  store.bucketlist = data.bucketlists
 }
 
 const updateBucketlistSuccess = function (data) {
-  console.log(`data.bucketlist is ${data.bucketlists}`)
+  // console.log(`data.bucketlist is ${data.bucketlists}`)
   store.bucketlist = data.bucketlists
   $('#bucketlist-update')[0].reset()
   console.log('You successfully updated the bucketlist!')
-  // const bookHTML = (`
-  //   <h4>Title: ${data.bucketlists.name}</h4>
-  //   <p>Author: ${data.bucketlists.task}</p>
-  //   <br>
-  // `)
-
-  // $('#content').html(bookHTML)
 }
 
 const failure = function (error) {

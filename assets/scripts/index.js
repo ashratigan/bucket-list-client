@@ -7,6 +7,8 @@
 // require('./example')
 const authEvents = require('./auth/events')
 require('./buttons.js')
+require('./bldisplay.js')
+
 $(() => {
   // your JS code goes here
   authEvents.addHandlers()

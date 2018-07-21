@@ -52,22 +52,33 @@ const onCreateBucketlist = function (event) {
 
   api.createBucketlist(data)
     .then(ui.createSuccess)
-    .catch(ui.createSuccess)
+    .catch(ui.failure)
 }
-
-// const onMoves = function (event) {
-//   event.preventDefault()
-//   const data = game.gameValues
-//   api.userMoves(data.i, data.v, data.isOver)
-//     .then(ui.movesSuccess)
-//     .catch(ui.movesSuccess)
-// }
 
 const onGetBucketlists = function (event) {
   event.preventDefault()
   api.getBucketlists()
     .then(ui.getBukectlistsSuccess)
-    .catch(ui.getBukectlistsSuccess)
+    .catch(ui.failure)
+}
+
+const onUpdateBucketlist = function (event) {
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  // const bucketlist = data.book
+  // if (book.title === '') {
+  // alert('title required')
+  // $('#content').html('<p>Title is required</p>')
+  // $('#content').css('background-color', 'red')
+  // return false
+  // }
+  // if (book.id.length !== 0) {
+    api.updateBucketlist(data)
+      .then(ui.updateBukectlistsSuccess)
+      .catch(ui.failure)
+  // } else {
+    // console.log('Please provide a book id!')
+  // }
 }
 
 const addHandlers = () => {
@@ -78,6 +89,7 @@ const addHandlers = () => {
   $('#bucketlist-form').on('submit', onCreateBucketlist)
   // $('.col1, .col2, .col3').on('click', onMoves)
   $('#seeBucketlists').one('click', onGetBucketlists)
+  $('#book-update').one('submit', onUpdateBucketlist)
 }
 
 module.exports = {

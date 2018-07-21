@@ -43,7 +43,7 @@ const createSuccess = function (data) {
 const getBukectlistsSuccess = function (data) {
   // $('.displayedBucketlists').append('<p>Bucket lists ' + data.bucketlists.id)
   // $('.displayedBucketlists').append('<p>Bucket lists ' + data.bucketlists.id.bl_name)
-  
+
   for (let i = 0; i < data.bucketlists.length; i++) {
     const taskList = data.bucketlists[i].task.split(',')
     console.log(taskList)
@@ -59,7 +59,16 @@ const getBukectlistsSuccess = function (data) {
   console.log(`ui data is ${data.bucketlists.id}`)
 }
 
-// task_list = task.split(',')
+const updateBucketlistSuccess = function (data) {
+  console.log('You successfully updated the book!')
+  const bookHTML = (`
+    <h4>Title: ${data.bucketlists.name}</h4>
+    <p>Author: ${data.bucketlists.task}</p>
+    <br>
+  `)
+
+  $('#content').html(bookHTML)
+}
 
 const failure = function (error) {
   $('#userMessage').text('Error')
@@ -74,5 +83,6 @@ module.exports = {
   signOutSuccess,
   createSuccess,
   getBukectlistsSuccess,
+  updateBucketlistSuccess,
   failure
 }

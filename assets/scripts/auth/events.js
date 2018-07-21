@@ -74,7 +74,7 @@ const onUpdateBucketlist = function (event) {
   // }
   // if (book.id.length !== 0) {
   api.updateBucketlist(data)
-    .then(ui.updateBukectlistsSuccess)
+    .then(ui.updateBucketlistSuccess)
     .catch(ui.failure)
   // } else {
     // console.log('Please provide a book id!')
@@ -134,10 +134,10 @@ const addHandlers = () => {
   $('#bucketlist-form').on('submit', onCreateBucketlist)
   // $('.col1, .col2, .col3').on('click', onMoves)
   $('#seeBucketlists').one('click', onGetBucketlists)
-  $('#book-update').one('submit', onUpdateBucketlist)
-  $('#book-update').one('submit', onUpdateBucketlist)
+  $('#bucketlist-update').one('submit', onUpdateBucketlist)
+  $('#bucketlist-update').one('submit', onUpdateBucketlist)
   // $('#book-update').one('click', 'button', onDeleteBucketlist)
-  $('#book-delete').on('submit', onDeleteBucketlist)
+  $('#bucketlist-delete').on('submit', onDeleteBucketlist)
 }
 
 module.exports = {

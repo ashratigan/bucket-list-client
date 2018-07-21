@@ -65,8 +65,6 @@ const getBucketlists = function () {
 
 const updateBucketlist = function (data) {
   console.log(`api data is ${data}`)
-  // console.log(`api data.bucketlists is ${data.bucketlists}`)
-  // console.log(`api data.bucketlists.id is ${data.bucketlists.id}`)
   console.log(`api data.id is ${data.id}`)
   return $.ajax({
     url: config.apiUrl + '/bucketlists/' + data.bucketlist.id,

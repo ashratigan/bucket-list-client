@@ -66,23 +66,16 @@ const getBukectlistsSuccess = function (data) {
 const updateBucketlistSuccess = function (data) {
   console.log(`data.bucketlist is ${data.bucketlists}`)
   store.bucketlist = data.bucketlists
-  $('#book-update')[0].reset()
-  console.log('You successfully updated the book!')
-  // const bucketlistHTML = (`
-  //   <h4>Name: ${data.bucketlist.name}</h4>
-  //   <p>Tasks: ${data.bucketlist.task}</p>
+  $('#bucketlist-update')[0].reset()
+  console.log('You successfully updated the bucketlist!')
+
+  // const bookHTML = (`
+  //   <h4>Title: ${data.bucketlists.name}</h4>
+  //   <p>Author: ${data.bucketlists.task}</p>
   //   <br>
   // `)
 
-  // $('.displayedBucketlists').html(bucketlistHTML)
-  console.log('You successfully updated the book!')
-  const bookHTML = (`
-    <h4>Title: ${data.bucketlists.name}</h4>
-    <p>Author: ${data.bucketlists.task}</p>
-    <br>
-  `)
-
-  $('#content').html(bookHTML)
+  // $('#content').html(bookHTML)
 }
 
 const failure = function (error) {

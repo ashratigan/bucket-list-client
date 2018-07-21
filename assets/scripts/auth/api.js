@@ -78,6 +78,16 @@ const updateBucketlist = function (data) {
   })
 }
 
+const deleteBucketlist = (data) => {
+  return $.ajax({
+    url: config.apiUrl + '/bucketlists/' + data.bucketlist.id,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
@@ -85,5 +95,6 @@ module.exports = {
   signOut,
   createBucketlist,
   getBucketlists,
-  updateBucketlist
+  updateBucketlist,
+  deleteBucketlist
 }

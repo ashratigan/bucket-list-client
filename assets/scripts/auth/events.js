@@ -81,6 +81,27 @@ const onUpdateBucketlist = function (event) {
   // }
 }
 
+// const onDeleteBucketlists = (event) => {
+//   event.preventDefault()
+//   const bucketlistId = $(event.target).closest('ul').attr('data-id')
+//   api.deleteBucketlist(bucketlistId)
+//     .then(() => onGetBucketlists(event))
+//     .catch(ui.failure)
+// }
+
+const onDeleteBucketlist = function (event) {
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  // const book = data.book
+  // if (book.id.length !== 0) {
+    api.deleteBucketlist(data)
+      .then(ui.updateBukectlistsSuccess)
+      .catch(ui.failure)
+  // } else {
+    // console.log('Please provide a book id!')
+  // }
+}
+
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
@@ -90,6 +111,9 @@ const addHandlers = () => {
   // $('.col1, .col2, .col3').on('click', onMoves)
   $('#seeBucketlists').one('click', onGetBucketlists)
   $('#book-update').one('submit', onUpdateBucketlist)
+  $('#book-update').one('submit', onUpdateBucketlist)
+  // $('#book-update').one('click', 'button', onDeleteBucketlist)
+  $('#book-delete').on('submit', onDeleteBucketlist)
 }
 
 module.exports = {

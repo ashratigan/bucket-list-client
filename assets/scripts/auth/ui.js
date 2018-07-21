@@ -16,8 +16,8 @@ const signUpSuccess = function (data) {
 const signInSuccess = function (data) {
   $('#userMessage').text('Signed in successfully')
   $('.signInUp').css('display', 'none')
-  $('.sign-inup-buttons').css('display', 'none')
-  $('.slideshow').css('display', 'none')
+  // $('.sign-inup-buttons').css('display', 'none')
+  $('#landing').css('display', 'none')
   $('#seeInfo').css('display', 'block')
   $('.bucketList').css('display', 'block')
   $('#sign-in')[0].reset()

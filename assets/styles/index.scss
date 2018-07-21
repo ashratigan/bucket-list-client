@@ -111,6 +111,26 @@ body {
   display: none;
 }
 
+form {
+  display: inline-block;
+  // width: 30%;
+  // height: 300px;
+}
+
+fieldset {
+  // display: inline-block;
+  // width: 30%;
+  // height: 300px;
+}
+
+.forms {
+  height: 300px;
+  width: 30%;
+}
+
+.bucketList h3 {
+  padding-top: 100px;
+}
 // **********************
 // SETTINGS FOR sign in / sign up
 // **********************
@@ -151,9 +171,21 @@ input {
 }
 
 .userInfo {
-    display: none;
+  display: none;
 }
 
 #seeInfo {
   display: none;
+}
+
+// **********************		
+// SETTINGS FOR footer
+// **********************
+footer {
+  border-top: 3px solid #666;
+  background: linear-gradient(#999, #fff 10%);
+  padding: 20px 0;
+}
+.photos {
+  // padding-bottom: 20px;
 }

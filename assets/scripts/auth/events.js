@@ -87,7 +87,7 @@ const onUpdateBucketlist = function (event) {
 const onDeleteBucketlist = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
-  const book = data.book
+  // const book = data.book
   // if (book.id.length !== 0) {
   api.deleteBucketlist(data)
     .then(ui.updateBukectlistsSuccess)

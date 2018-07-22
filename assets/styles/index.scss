@@ -132,44 +132,11 @@ form {
   width: 30%;
 }
 
-// **********************
-// SETTINGS FOR sign in / sign up
-// **********************
-.signInUp {
-  height: 75%;
-  color: #aaa;
-  z-index: 1;
-  position: relative;
-  text-align: center;
-  // padding-top: 40vh;
-  padding-bottom: 20vh;
-}
-
-input {
-  margin: 2px;
-}
-
-#sign-up {
-  padding: 20px;
-}
-
-#sign-in {
-  padding: 20px;
-}
-
 // **********************		
-// SETTINGS FOR CHANGE PASSWORD		
+// SETTINGS FOR USER INFO	
 // **********************		
 #change-password-form {
-  margin: 5px;
-  color: #aaa;
   display: none;
-}
-
-#changedPassword {
-  margin-top: 10px;
-  height: 15%;
-  font-size: 24px;
 }
 
 .userInfo {

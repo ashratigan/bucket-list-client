@@ -12,12 +12,28 @@ $('.bldisplay').on('click', 'li', function () {
 // })
 
 // add event listener to add todo
-$("input[type='text']").keypress(function (event) {
+$("input[id='input1']").keypress(function (event) {
   if (event.which === 13) {
     const todoText = $(this).val()
     $(this).val('')
     // create new li and add to ul
-    $('ul').append('<li>' + todoText + '</li>')
+    $('#ul1').append('<li>' + todoText + '</li>')
+  }
+})
+$("input[id='input2']").keypress(function (event) {
+  if (event.which === 13) {
+    const todoText = $(this).val()
+    $(this).val('')
+    // create new li and add to ul
+    $('#ul2').append('<li>' + todoText + '</li>')
+  }
+})
+$("input[id='input3']").keypress(function (event) {
+  if (event.which === 13) {
+    const todoText = $(this).val()
+    $(this).val('')
+    // create new li and add to ul
+    $('#ul3').append('<li>' + todoText + '</li>')
   }
 })
 

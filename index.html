@@ -16,17 +16,19 @@
   </head>
 
   <body>
+    <!-- ************************************** -->
     <!-- HEADER -->
+    <!-- ************************************** -->
     <header class="masthead text-white text-center" id="landing">
       <div class="welcome">
         <h1>Bucket list</h1>
         <h2>What are you waiting for?</h2>
         <div class="sign-inup-buttons">
-          <button class="btn btn-default">
-            <a href="#sign-up">Sign up</a>
+          <button type="button" class="btn btn-default" data-toggle="modal" data-target="#signUpModal">
+            Sign Up!
           </button>
-          <button class="btn btn-default">
-            <a href="#signIn">Sign in</a>
+          <button type="button" class="btn btn-default" data-toggle="modal" data-target="#signInModal">
+            Sign In!
           </button>
         </div>
       </div>
@@ -38,7 +40,9 @@
         <li></li>
       </ul>
     </header>
+    <!-- ************************************** -->
     <!-- End Header -->
+    <!-- ************************************** -->
 
     <!-- ************************************** -->
     <!-- BUCKET LIST DISPLAY TEST -->
@@ -88,7 +92,9 @@
     <!-- BUCKET LIST DISPLAY TEST END -->
     <!-- ************************************** -->
 
+    <!-- ************************************** -->
     <!-- HIDDEN UNTIL SIGN IN DIVS -->
+    <!-- ************************************** -->
     <div class='bucketList'>
       
       <h1>Your bucketlists!</h1>
@@ -139,72 +145,122 @@
         </fieldset>
       </form>
     </div>
-    <!-- HIDDEN UNTIL SIGN IN DIVS -->
+    <!-- ************************************** -->
+    <!-- HIDDEN UNTIL SIGN IN DIVS END -->
+    <!-- ************************************** -->
 
-    <!-- Hidden Divs -->
-    <div class='signInUp'>
-      <div id="signUp">
-        <form id="sign-up">
-          <fieldset>
-            <h2>Sign Up!</h2>
-            <input type="email" name="credentials[email]" placeholder="Email">
-            <br>
-            <input type="password" name="credentials[password]" placeholder="Password">
-            <br>
-            <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
-            <br>
-            <button type="submit" class="btn btn-default">Sign Up!</button>
-          </fieldset>
-        </form>
-      </div>
-
-      <div id="signIn">
-        <form id="sign-in">
-          <fieldset>
-            <h2>Sign In!</h2>
-            <input type="text" name="credentials[email]" placeholder="Email">
-            <br>
-            <input type="password" name="credentials[password]" placeholder="Password">
-            <br>
-            <button type="submit" class="btn btn-default">Sign In!</button>
-          </fieldset>
-        </form>
+    <!-- ************************************** -->
+    <!-- SIGN IN / UP MODALS -->
+    <!-- ************************************** -->
+    <div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Sign Up!</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form id="sign-up">
+              <fieldset>
+                <input type="email" name="credentials[email]" placeholder="Email">
+                <br>
+                <input type="password" name="credentials[password]" placeholder="Password">
+                <br>
+                <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
+                <button type="submit" class="btn btn-default">Sign Up!</button>
+              </fieldset>
+            </form>
+          </div>
+          <!-- <div class="modal-footer"> -->
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
       </div>
     </div>
-    <!-- End Hidden Divs -->
+
+    <div class="modal fade" id="signInModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Sign In!</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form id="sign-in">
+              <fieldset>
+                <input type="email" name="credentials[email]" placeholder="Email">
+                <br>
+                <input type="password" name="credentials[password]" placeholder="Password">
+                <button type="submit" class="btn btn-default">Sign In!</button>
+              </fieldset>
+            </form>
+          </div>
+          <!-- <div class="modal-footer"> -->
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ************************************** -->
+    <!-- END MODALS -->
+    <!-- ************************************** -->
+
 
     <!-- MESSAGE FOR USERS ON SIGN IN/UP -->
     <div id='userMessage'></div>
     <!-- MESSAGE END -->
 
-    <!-- BUTTON TO SEE USER INFO -->
-    <button class="btn btn-default" id='seeInfo'>See User Info</button>
-    <!-- BUTTON END -->
+    <!-- ************************************** -->
+    <!-- USER INFO -->
+    <!-- ************************************** -->
+    <button type="button" id='seeInfo' class="btn btn-default" data-toggle="modal" data-target="#userInfoModal">
+      User Info
+    </button>
 
-    <!-- User info -->
-    <div class='userInfo'>
-      <button class="btn btn-default" id='changePasswordButton'>Change Password</button>
-      <form id="sign-out">
-      <input type="submit" class="btn btn-default" value="Sign Out!">
-      </form>
-      <div>
-        <form id="change-password-form" class="border">
-          <fieldset>
-            <h3>Change Password</h3>
-            <input type="password" name="passwords[old]" placeholder="Old Password">
-            <br>
-            <input type="password" name="passwords[new]" placeholder="New Password">
-            <br>
-            <br>
-            <button type="submit" class="btn btn-default">Change Password</button>
-          </fieldset>
-        </form>
-        <div id="changedPasswordMessage"></div>
+    <div class="modal fade" id="userInfoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">User Info!</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <button class="btn btn-default" id='changePasswordButton'>Change Password</button>
+            <form id="sign-out">
+              <input type="submit" class="btn btn-default" value="Sign Out!">
+            </form>
+            <form id="change-password-form" class="border">
+              <fieldset>
+                <h3>Change Password</h3>
+                <input type="password" name="passwords[old]" placeholder="Old Password">
+                <br>
+                <input type="password" name="passwords[new]" placeholder="New Password">
+                <br>
+                <br>
+                <button type="submit" class="btn btn-default">Change Password</button>
+              </fieldset>
+            </form>
+            <div id="changedPasswordMessage"></div>
+          </div>
+          <!-- <div class="modal-footer"> -->
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
       </div>
     </div>
+    <!-- ************************************** -->
     <!-- End User info -->
+    <!-- ************************************** -->
 
+    <!-- ************************************** -->
     <!-- Footer -->
+    <!-- ************************************** -->    
     <footer>
       <h4>Made by Ashley - 2018</h4>
       <div class="photos">
@@ -217,6 +273,8 @@
         </h4>
       </div>  
     </footer>
+    <!-- ************************************** -->
     <!-- End footer -->
+    <!-- ************************************** --> 
   </body>
 </html>

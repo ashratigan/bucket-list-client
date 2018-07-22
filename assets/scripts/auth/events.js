@@ -78,8 +78,8 @@ const onUpdateBucketlist = function (event) {
   // if (book.id.length !== 0) {
   api.updateBucketlist(data)
     // .then(ui.updateBucketlistSuccess)
-    // .then(() => onGetBucketlists(event))
-    .then(ui.updateBucketlistSuccess)
+    .then(() => onGetBucketlists(event))
+    // .then(ui.updateBucketlistSuccess)
     // .then(ui.getBukectlistsSuccess)
     .catch(ui.failure)
   // } else {
@@ -110,9 +110,9 @@ const addHandlers = () => {
   $('#change-password-form').on('submit', onChangePassword)
   $('#sign-out').on('submit', onSignOut)
   $('#bucketlist-form').on('submit', onCreateBucketlist)
-  $('#seeBucketlists').one('click', onGetBucketlists)
-  $('#bucketlist-update').one('submit', onUpdateBucketlist)
-  $('#bucketlist-update').one('submit', onUpdateBucketlist)
+  $('#seeBucketlists').on('click', onGetBucketlists)
+  $('#bucketlist-update').on('submit', onUpdateBucketlist)
+  // $('#bucketlist-update').one('submit', onUpdateBucketlist)
   $('#bucketlist-delete').on('submit', onDeleteBucketlist)
 }
 

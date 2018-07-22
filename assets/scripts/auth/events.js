@@ -66,6 +66,7 @@ const onCreateBucketlist = function (event) {
 
 const onUpdateBucketlist = function (event) {
   event.preventDefault()
+  console.log(`update event is ${event}`)
   const data = getFormFields(event.target)
   // const bucketlist = data.book
   // if (book.title === '') {
@@ -77,7 +78,9 @@ const onUpdateBucketlist = function (event) {
   // if (book.id.length !== 0) {
   api.updateBucketlist(data)
     // .then(ui.updateBucketlistSuccess)
-    .then(() => onGetBucketlists(event))
+    // .then(() => onGetBucketlists(event))
+    .then(api.getBucketlists)
+    .then(ui.getBukectlistsSuccess)
     .catch(ui.failure)
   // } else {
     // console.log('Please provide a book id!')

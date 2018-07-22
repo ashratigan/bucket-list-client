@@ -79,8 +79,8 @@ const onUpdateBucketlist = function (event) {
   api.updateBucketlist(data)
     // .then(ui.updateBucketlistSuccess)
     // .then(() => onGetBucketlists(event))
-    .then(api.getBucketlists)
-    .then(ui.getBukectlistsSuccess)
+    .then(ui.updateBucketlistSuccess)
+    // .then(ui.getBukectlistsSuccess)
     .catch(ui.failure)
   // } else {
     // console.log('Please provide a book id!')

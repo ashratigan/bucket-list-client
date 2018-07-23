@@ -8,15 +8,23 @@ const store = require('../store')
 // *****************************
 
 const signUpSuccess = function (data) {
-  $('#userMessage').text('Signed up successfully')
+  $('#modalMessageSignUp').text('Signed up successfully! Sign in to get started!')
+  $('#sign-up').slideToggle(200)
+  setTimeout(function () {
+    $('#signUpModal').modal('hide')
+    $('#sign-up').show()
+  }, 2000)
   $('#sign-up')[0].reset()
   console.log('sign up success')
 }
 
 const signInSuccess = function (data) {
-  $('#userMessage').text('Signed in successfully')
-  $('.signInUp').css('display', 'none')
-  // $('.sign-inup-buttons').css('display', 'none')
+  $('#modalMessageSignIn').text('Signed in successfully')
+  $('#sign-in').slideToggle(200)
+  setTimeout(function () {
+    $('#signInModal').modal('hide')
+    $('#sign-in').show()
+  }, 2000)
   $('#landing').css('display', 'none')
   $('#seeInfo').css('display', 'block')
   $('.bucketList').css('display', 'block')
@@ -35,7 +43,11 @@ const changePasswordSuccess = function (data) {
 }
 
 const signOutSuccess = function () {
-  $('#userMessage').text('Signed out successfully')
+  $('#modalMessageSignIn').text('Signed in!')
+  $('#modalMessageUserInfo').text('Signed out! See you next time!')
+  setTimeout(function () {
+    $('#userInfoModal').modal('hide')
+  }, 2000)
   $('.signInUp').css('display', 'block')
   $('.userInfo').css('display', 'none')
   $('#seeInfo').css('display', 'none')

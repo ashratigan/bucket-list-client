@@ -63,9 +63,9 @@ const getBukectlistsSuccess = function (data) {
   $('.displayedBucketlists').empty()
   for (let i = 0; i < data.bucketlists.length; i++) {
     const taskList = data.bucketlists[i].task.split(',')
-    $('.displayedBucketlists').append('<h1>' + data.bucketlists[i].bl_name + '<span style="font-size:12px;float:rightt;"><i> ID:' + data.bucketlists[i].id + '</i></span></h1><br/>')
+    $('.displayedBucketlists').append('<h1>' + data.bucketlists[i].bl_name + '<span style="font-size:12px;float:rightt;"><i> ID:' + data.bucketlists[i].id + '</i></span></h1>')
     for (let i = 0; i < taskList.length; i++) {
-      $('.displayedBucketlists').append('<ul><li>' + taskList[i] + '</li></ul><br/>')
+      $('.displayedBucketlists').append('<li>' + taskList[i] + '</li>')
     }
   }
   $('#seeBucketlists').css('display', 'none')

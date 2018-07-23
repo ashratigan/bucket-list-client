@@ -69,6 +69,7 @@ const getBukectlistsSuccess = function (data) {
     }
   }
   $('#seeBucketlists').css('display', 'none')
+  $('#title').css('display', 'block')
   $('#bucketlist-update')[0].reset()
   $('#bucketlist-form')[0].reset()
   store.bucketlist = data.bucketlists

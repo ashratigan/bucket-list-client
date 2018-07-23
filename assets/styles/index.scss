@@ -158,12 +158,21 @@ footer {
 }
 
 // **********************		
-// TEST for display bucket list styling
+// SETTINGS for display bucket list styling
 // **********************
 .bldisplay {
     z-index: 1;
     padding-top: 40vh;
     text-align: left;
+}
+
+#title {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 48px;
+  background: #fff;
+  color: #000;
+  display:none;
 }
 
 .bldisplay h1 {

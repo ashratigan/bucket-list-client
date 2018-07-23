@@ -19,9 +19,3 @@ $(document).ready(function () {
     $('#userMessage').css('background-color', '222')
   })
 })
-
-// Function to validate emails
-// const validateEmail = function (email) {
-//   const re = /\S+@\S+/
-//   return re.test(email)
-// }

@@ -1,12 +1,10 @@
 'use strict'
 
 const store = require('../store')
-// const showBucketlistsTemplate = require('../templates/bucketlist.handlebars')
 
 // *****************************
 // Ui for user
 // *****************************
-
 const signUpSuccess = function (data) {
   $('#modalMessageSignUp').text('Signed up successfully! Sign in to get started!')
   $('#sign-up').slideToggle(100)
@@ -14,7 +12,6 @@ const signUpSuccess = function (data) {
     $('#signUpModal').modal('hide')
   }, 2000)
   $('#sign-up')[0].reset()
-  console.log('sign up success')
 }
 
 const signInSuccess = function (data) {
@@ -28,7 +25,6 @@ const signInSuccess = function (data) {
   $('.bucketList').css('display', 'block')
   $('.bldisplay').css('padding-top', '50px')
   $('#sign-in')[0].reset()
-  console.log('sign in success')
   store.user = data.user
 }
 
@@ -37,7 +33,6 @@ const changePasswordSuccess = function (data) {
   $('#changedPasswordMessage').delay(3200).fadeOut(300)
   $('#change-password-form').css('display', 'none')
   $('#change-password-form')[0].reset()
-  console.log('change password success')
 }
 
 const signOutSuccess = function () {
@@ -59,9 +54,7 @@ const signOutSuccess = function () {
 // *****************************
 // Ui for bucketlist
 // *****************************
-
 const createSuccess = function (data) {
-  console.log(`data.bucketlist is ${data.bucketlists}`)
   store.bucketlist = data.bucketlists
   $('#bucketlist-form')[0].reset()
 }
@@ -74,34 +67,14 @@ const getBukectlistsSuccess = function (data) {
     for (let i = 0; i < taskList.length; i++) {
       $('.displayedBucketlists').append('<ul><li>' + taskList[i] + '</li></ul><br/>')
     }
-    console.log(taskList)
-    console.log(`ui task data is ${data.bucketlists[i].task}`)
-    // $('.displayedBucketlists').append('<p><i>ID:' + data.bucketlists[i].id + '</i><br/><b>' + data.bucketlists[i].bl_name + '</b><br/>' + taskList + '<br/></p><br/>')
   }
-  console.log(`ui data is ${data}`)
-  console.log(`ui data is ${data.bucketlists}`)
-  console.log(`ui data is ${data.bucketlists.id}`)
+  $('#seeBucketlists').css('display', 'none')
   $('#bucketlist-update')[0].reset()
   $('#bucketlist-form')[0].reset()
   store.bucketlist = data.bucketlists
 }
 
-const updateBucketlistSuccess = function (data) {
-  // console.log(`data.bucketlist is ${data.bucketlists}`)
-  // store.bucketlist = data.bucketlists
-  console.log('You successfully updated the bucketlist!')
-  const bookHTML = (`
-  //   <h4>Title: ${data.bucketlists.bl_name}</h4>
-  //   <p>Author: ${data.bucketlists.task}</p>
-  //   <br>
-  // `)
-
-  $('#content').html(bookHTML)
-  $('#bucketlist-update')[0].reset()
-}
-
-const failure = function (error) {
-  console.log(`Oh no, there was an error: ${error}`)
+const failure = function () {
   $('#message').text('Oh no, something went wrong!')
 }
 const signInFailure = function () {
@@ -123,7 +96,6 @@ module.exports = {
   signOutSuccess,
   createSuccess,
   getBukectlistsSuccess,
-  updateBucketlistSuccess,
   failure,
   signInFailure,
   signUpFailure,

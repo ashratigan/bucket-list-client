@@ -7,7 +7,6 @@ const ui = require('./ui')
 // *****************************
 // Events for user
 // *****************************
-
 const onSignUp = function (event) {
   event.preventDefault()
 
@@ -55,10 +54,7 @@ const onGetBucketlists = function (event) {
 
 const onCreateBucketlist = function (event) {
   event.preventDefault()
-
   const data = getFormFields(this)
-  console.log(`events data is ${data}`)
-
   api.createBucketlist(data)
     .then(() => onGetBucketlists(event))
     .catch(ui.failure)
@@ -66,44 +62,23 @@ const onCreateBucketlist = function (event) {
 
 const onUpdateBucketlist = function (event) {
   event.preventDefault()
-  console.log(`update event is ${event}`)
   const data = getFormFields(event.target)
-  // const bucketlist = data.book
-  // if (book.title === '') {
-  // alert('title required')
-  // $('#content').html('<p>Title is required</p>')
-  // $('#content').css('background-color', 'red')
-  // return false
-  // }
-  // if (book.id.length !== 0) {
   api.updateBucketlist(data)
-    // .then(ui.updateBucketlistSuccess)
     .then(() => onGetBucketlists(event))
-    // .then(ui.updateBucketlistSuccess)
-    // .then(ui.getBukectlistsSuccess)
     .catch(ui.failure)
-  // } else {
-    // console.log('Please provide a book id!')
-  // }
 }
 
 const onDeleteBucketlist = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
-  // const book = data.book
-  // if (book.id.length !== 0) {
   api.deleteBucketlist(data)
     .then(() => onGetBucketlists(event))
     .catch(ui.failure)
-  // } else {
-    // console.log('Please provide a book id!')
-  // }
 }
 
 // *****************************
 // Add Handlers
 // *****************************
-
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
@@ -112,7 +87,6 @@ const addHandlers = () => {
   $('#bucketlist-form').on('submit', onCreateBucketlist)
   $('#seeBucketlists').on('click', onGetBucketlists)
   $('#bucketlist-update').on('submit', onUpdateBucketlist)
-  // $('#bucketlist-update').one('submit', onUpdateBucketlist)
   $('#bucketlist-delete').on('submit', onDeleteBucketlist)
 }
 

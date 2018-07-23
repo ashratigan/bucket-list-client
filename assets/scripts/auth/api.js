@@ -4,7 +4,6 @@ const config = require('../config')
 const store = require('../store')
 
 const signUp = function (data) {
-  console.log('sign up')
   return $.ajax({
     url: config.apiUrl + '/sign-up',
     method: 'POST',
@@ -21,7 +20,6 @@ const signIn = function (data) {
 }
 
 const changePassword = function (data) {
-  console.log('change password api')
   return $.ajax({
     url: config.apiUrl + '/change-password',
     method: 'PATCH',
@@ -64,8 +62,6 @@ const getBucketlists = function () {
 }
 
 const updateBucketlist = function (data) {
-  console.log(`api data is ${data}`)
-  console.log(`api data.id is ${data.id}`)
   return $.ajax({
     url: config.apiUrl + '/bucketlists/' + data.bucketlist.id,
     method: 'PATCH',

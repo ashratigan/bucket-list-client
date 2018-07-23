@@ -9,10 +9,9 @@ const store = require('../store')
 
 const signUpSuccess = function (data) {
   $('#modalMessageSignUp').text('Signed up successfully! Sign in to get started!')
-  $('#sign-up').slideToggle(200)
+  $('#sign-up').slideToggle(100)
   setTimeout(function () {
     $('#signUpModal').modal('hide')
-    $('#sign-up').show()
   }, 2000)
   $('#sign-up')[0].reset()
   console.log('sign up success')
@@ -20,10 +19,9 @@ const signUpSuccess = function (data) {
 
 const signInSuccess = function (data) {
   $('#modalMessageSignIn').text('Signed in successfully')
-  $('#sign-in').slideToggle(200)
+  $('#sign-in').slideToggle(100)
   setTimeout(function () {
     $('#signInModal').modal('hide')
-    $('#sign-in').show()
   }, 2000)
   $('#landing').css('display', 'none')
   $('#seeInfo').css('display', 'block')
@@ -103,9 +101,19 @@ const updateBucketlistSuccess = function (data) {
 }
 
 const failure = function (error) {
-  $('#userMessage').text('Error')
-  $('#userMessage').css('background-color', '#800')
-  console.log('Failure ran. Error is :', error)
+  console.log(`Oh no, there was an error: ${error}`)
+  $('#message').text('Oh no, something went wrong!')
+}
+const signInFailure = function () {
+  $('#modalMessageSignIn').text('Oh no, incorrect email or password')
+}
+
+const signUpFailure = function () {
+  $('#modalMessageSignUp').text('Oh no, something went wrong! That email might already be in the system or you passwords do not match')
+}
+
+const changePasswordFailure = function () {
+  $('#changedPasswordMessage').text('Oh no, something went wrong!')
 }
 
 module.exports = {
@@ -116,5 +124,8 @@ module.exports = {
   createSuccess,
   getBukectlistsSuccess,
   updateBucketlistSuccess,
-  failure
+  failure,
+  signInFailure,
+  signUpFailure,
+  changePasswordFailure
 }

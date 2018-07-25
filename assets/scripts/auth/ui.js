@@ -78,16 +78,22 @@ const getBukectlistsSuccess = function (data) {
 
 const failure = function () {
   $('#message').text('Oh no, something went wrong!')
+  $('#bucketlist-update')[0].reset()
+  $('#bucketlist-form')[0].reset()
+  $('#bucketlist-delete')[0].reset()
 }
 const signInFailure = function () {
+  $('#sign-in')[0].reset()
   $('#modalMessageSignIn').text('Oh no, incorrect email or password')
 }
 
 const signUpFailure = function () {
+  $('#sign-up')[0].reset()
   $('#modalMessageSignUp').text('Oh no, something went wrong! That email might already be in the system or you passwords do not match')
 }
 
 const changePasswordFailure = function () {
+  $('#change-password-form')[0].reset()
   $('#changedPasswordMessage').text('Oh no, something went wrong!')
 }
 

@@ -18,7 +18,7 @@ The back end is hosted on Heroku: https://thawing-anchorage-52719.herokuapp.com/
 The page has a welcome background of a slideshow of pictures until the user signs up or sign in.
 
 ## In progress
-I am trying to update the display of the created, so it is more similar to the example bucketlists. I would like to add an input form at the top of each bucketlist that could patch to the bucketlist and add a new task to the end of the list. 
+I am trying to update the display of the created bucketlists, so they are more similar to the example bucketlists. I would like to add an input form at the top of each bucketlist that could patch to the bucketlist and add a new task to the end of the list. 
 
 ## User Stories
 As a user, I can view bucket list examples.

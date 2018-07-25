@@ -17,8 +17,20 @@ The back end is hosted on Heroku: https://thawing-anchorage-52719.herokuapp.com/
 ## Features and Additions
 The page has a welcome background of a slideshow of pictures until the user signs up or sign in.
 
-## Updates
-Updates will come after project is complete.
+## In progress
+I am trying to update the display of the created, so it is more similar to the example bucketlists. I would like to add an input form at the top of each bucketlist that could patch to the bucketlist and add a new task to the end of the list. 
+
+## User Stories
+As a user, I can view bucket list examples.
+As a user, I can add to bucket list exampels and cross of tasks on examples.
+As a user, I can sign up.
+As a user, I can sign in.
+As a signed in user, I can create my own bucketlist. 
+As a signed in user, I can see my own bucketlists. 
+As a signed in user, I can update my own bucketlists. 
+As a signed in user, I can delete my own bucketlists. 
+As a signed in user, I can change my password.
+As a signed in user, I can sign out.
 
 ## Wireframes
 ![Bucket List Wireframe](https://i.imgur.com/A2hi7hy.jpg)

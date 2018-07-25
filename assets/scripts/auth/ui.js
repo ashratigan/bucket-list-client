@@ -66,7 +66,7 @@ const getBukectlistsSuccess = function (data) {
     $('.displayedBucketlists').append('<h1>' + data.bucketlists[i].bl_name + '<span style="font-size:12px;float:rightt;"><i> ID:' + data.bucketlists[i].id + '</i></span></h1>')
     for (let i = 0; i < taskList.length; i++) {
       $('.displayedBucketlists').append('<li>' + taskList[i] + '</li>')
-    }
+    }                                                                                                                                                                                                                                       
   }
   $('#seeBucketlists').css('display', 'none')
   $('#title').css('display', 'block')

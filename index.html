@@ -104,6 +104,8 @@
       <div class="showBLButtons">
         <button class='btn btn-default' id='seeBucketlists'> See Bucketlists </button>
         <button class='btn btn-default' id='hideBucketlists'> Hide Bucketlists </button>
+        <button class="btn btn-default" id='seeInfo' data-toggle="modal" data-target="#userInfoModal">User Info</button>
+        <div id="message"></div>
       </div>
       <div class="bldisplay">
         <div id="container">
@@ -208,13 +210,8 @@
     <!-- ************************************** -->
 
     <!-- ************************************** -->
-    <!-- USER INFO -->
+    <!-- USER INFO MODAL -->
     <!-- ************************************** -->
-    <button type="button" id='seeInfo' class="btn btn-default" data-toggle="modal" data-target="#userInfoModal">
-      User Info
-    </button>
-    <div id="message"></div>
-
     <div class="modal fade" id="userInfoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -225,7 +222,6 @@
             </button>
           </div>
           <div class="modal-body">
-            <button class="btn btn-default" id='changePasswordButton'>Change Password</button>
             <form id="change-password-form" class="border">
               <fieldset>
                 <h3>Change Password</h3>
@@ -233,10 +229,10 @@
                 <br>
                 <input type="password" name="passwords[new]" placeholder="New Password">
                 <br>
-                <br>
                 <button type="submit" class="btn btn-default">Change Password</button>
               </fieldset>
             </form>
+            <br>
             <form id="sign-out">
               <input type="submit" class="btn btn-default" value="Sign Out!">
             </form>

@@ -14,6 +14,10 @@ body {
   // font-family: 'Cabin Sketch', cursive;
 }
 
+a {
+  color: #111;
+}
+
 // **********************
 // SETTINGS FOR welcome
 // **********************
@@ -133,7 +137,7 @@ form {
 }
 
 // **********************		
-// SETTINGS FOR USER INFO	
+// SETTINGS FOR user info
 // **********************		
 #change-password-form {
   display: none;
@@ -160,6 +164,18 @@ footer {
 // **********************		
 // SETTINGS for display bucket list styling
 // **********************
+.showBLButtons {
+  padding-top: 50px;
+}
+
+#seeBucketlists {
+  font-size: 20px;
+}
+
+#hideBucketlists {
+  font-size: 20px;
+}
+
 .bldisplay {
     z-index: 1;
     padding-top: 40vh;
@@ -245,6 +261,10 @@ ul {
   margin: 0 auto;
   width: 30%;
   display: inline;
+}
+
+#hrefToSignUp {
+  padding-bottom: 100px;
 }
 
 /* **************************** */

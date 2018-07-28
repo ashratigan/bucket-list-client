@@ -7,6 +7,7 @@
 // require('./example')
 const authEvents = require('./auth/events')
 const blEvents = require('./bucketlists/events')
+const placeEvents = require('./random/events')
 require('./buttons.js')
 require('./bldisplay.js')
 
@@ -14,4 +15,5 @@ $(() => {
   // your JS code goes here
   authEvents.addHandlers()
   blEvents.addHandlers()
+  placeEvents.addHandlers()
 })

@@ -43,45 +43,6 @@ const onSignOut = function (event) {
 }
 
 // *****************************
-// Events for bucketlist
-// *****************************
-const onGetBucketlists = function (event) {
-  event.preventDefault()
-  api.getBucketlists()
-    .then(ui.getBukectlistsSuccess)
-    .catch(ui.failure)
-}
-
-const onCreateBucketlist = function (event) {
-  event.preventDefault()
-  const data = getFormFields(this)
-  api.createBucketlist(data)
-    .then(() => onGetBucketlists(event))
-    .catch(ui.failure)
-}
-
-const onClearBucketlists = (event) => {
-  event.preventDefault()
-  ui.clearBucketlists()
-}
-
-const onUpdateBucketlist = function (event) {
-  event.preventDefault()
-  const data = getFormFields(event.target)
-  api.updateBucketlist(data)
-    .then(() => onGetBucketlists(event))
-    .catch(ui.failure)
-}
-
-const onDeleteBucketlist = function (event) {
-  event.preventDefault()
-  const data = getFormFields(event.target)
-  api.deleteBucketlist(data)
-    .then(() => onGetBucketlists(event))
-    .catch(ui.failure)
-}
-
-// *****************************
 // Add Handlers
 // *****************************
 const addHandlers = () => {
@@ -89,11 +50,6 @@ const addHandlers = () => {
   $('#sign-in').on('submit', onSignIn)
   $('#change-password-form').on('submit', onChangePassword)
   $('#sign-out').on('submit', onSignOut)
-  $('#bucketlist-form').on('submit', onCreateBucketlist)
-  $('#hideBucketlists').on('click', onClearBucketlists)
-  $('#seeBucketlists').on('click', onGetBucketlists)
-  $('#bucketlist-update').on('submit', onUpdateBucketlist)
-  $('#bucketlist-delete').on('submit', onDeleteBucketlist)
 }
 
 module.exports = {

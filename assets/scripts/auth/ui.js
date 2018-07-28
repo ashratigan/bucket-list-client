@@ -21,6 +21,7 @@ const signInSuccess = function (data) {
     $('#signInModal').modal('hide')
   }, 2000)
   $('#landing').css('display', 'none')
+  $('#examples').css('display', 'none')
   $('#seeInfo').css('display', 'block')
   $('.bucketList').css('display', 'block')
   $('.bldisplay').css('padding-top', '50px')
@@ -68,7 +69,7 @@ const getBukectlistsSuccess = function (data) {
       $('.displayedBucketlists').append('<li>' + taskList[i] + '</li>')
     }
   }
-  $('#seeBucketlists').css('display', 'none')
+  // $('#seeBucketlists').css('display', 'none')
   $('#title').css('display', 'block')
   $('#bucketlist-update')[0].reset()
   $('#bucketlist-form')[0].reset()

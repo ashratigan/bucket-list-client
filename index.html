@@ -47,8 +47,8 @@
     <!-- ************************************** -->
     <!-- BUCKET LIST EXAMPLE DISPLAY TEST -->
     <!-- ************************************** -->
-    <div class="bldisplay">
-      <h2>Bucket List Ideas</h2>
+    <div class="bldisplay" id="examples">
+      <h2>Example Bucket List Ideas</h2>
       <div id="container">
         <div class="row">
           <div class="col-sm">
@@ -87,11 +87,12 @@
           </div>
         </div>
       </div>
+      <h2 id="hrefToSignUp"><a href="#landing">Sign Up to Make and Save Your Own!</a></h2>
     </div>  
-    <div>
+    <!-- <div>
       <h2>Need Inspiration?</h2>
       <h3><a href="https://ashratigan.github.io/random-place-client/">Check out this random place generator!</a></h3>
-    </div>
+    </div> -->
     <!-- ************************************** -->
     <!-- BUCKET LIST EXAMPLE DISPLAY END -->
     <!-- ************************************** -->
@@ -100,7 +101,10 @@
     <!-- HIDDEN UNTIL SIGN IN DIVS -->
     <!-- ************************************** -->
     <div class='bucketList'>
-      <button class='btn btn-default' id='seeBucketlists'> See Bucketlists </button>
+      <div class="showBLButtons">
+        <button class='btn btn-default' id='seeBucketlists'> See Bucketlists </button>
+        <button class='btn btn-default' id='hideBucketlists'> Hide Bucketlists </button>
+      </div>
       <div class="bldisplay">
         <h1 id="title">Your bucketlists!</h1>
         <div id="container">

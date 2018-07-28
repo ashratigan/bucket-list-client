@@ -6,6 +6,7 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 // SETTINGS FOR body
 // **********************
 body {
+  height: 100%;
   text-align: center;
   font-family: 'Open Sans Condensed', sans-serif;
   // font-family: 'Playfair Display', serif;
@@ -258,7 +259,7 @@ ul {
 .displayedBucketlists {
   background-color: #f7f7f7;
   margin: 0 auto;
-  width: 30%;
+  // width: 30%;
   display: inline;
 }
 
@@ -267,9 +268,33 @@ ul {
 }
 
 /* **************************** */
+/* STYLES FOR MAIN SECTION */
+/* **************************** */
+.main {
+  height: 50%;
+}
+
+.content {
+    padding: 50px;
+}
+
+.randomPlace {
+  height: 500px;
+  background-image: url(../images/nasa.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #fff;
+  text-shadow: 4px 4px 8px #111;
+}
+
+.randomPlace>h1 {
+  padding-top: 50px;
+}
+
+/* **************************** */
 /* MEDIA QUERIES */
 /* **************************** */
-
 @media only screen and (max-width: 992px) {
   .welcome h1 {
     font-size: 7em;

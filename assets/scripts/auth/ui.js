@@ -22,7 +22,6 @@ const signInSuccess = function (data) {
   }, 2000)
   $('#landing').css('display', 'none')
   $('#examples').css('display', 'none')
-  $('#seeInfo').css('display', 'block')
   $('.bucketList').css('display', 'block')
   $('.bldisplay').css('padding-top', '50px')
   $('#sign-in')[0].reset()
@@ -43,11 +42,10 @@ const signOutSuccess = function () {
     $('#userInfoModal').modal('hide')
   }, 2000)
   $('.signInUp').css('display', 'block')
-  $('.userInfo').css('display', 'none')
-  $('#seeInfo').css('display', 'none')
-  $('.bucketList').css('display', 'none')
   $('#landing').css('display', 'block')
-  $('.sign-inup-buttons').css('display', 'block')
+  $('#examples').css('display', 'block')
+  $('.userInfo').css('display', 'none')
+  $('.bucketList').css('display', 'none')
   $('.bldisplay').css('padding-top', '40vh')
   store.user = null
 }

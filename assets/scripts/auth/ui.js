@@ -70,11 +70,14 @@ const getBukectlistsSuccess = function (data) {
     }
   }
   // $('#seeBucketlists').css('display', 'none')
-  $('#title').css('display', 'block')
   $('#bucketlist-update')[0].reset()
   $('#bucketlist-form')[0].reset()
   $('#bucketlist-delete')[0].reset()
   store.bucketlist = data.bucketlists
+}
+
+const clearBucketlists = () => {
+  $('.displayedBucketlists').empty()
 }
 
 const failure = function () {
@@ -105,6 +108,7 @@ module.exports = {
   signOutSuccess,
   createSuccess,
   getBukectlistsSuccess,
+  clearBucketlists,
   failure,
   signInFailure,
   signUpFailure,

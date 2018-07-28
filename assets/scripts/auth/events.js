@@ -60,6 +60,11 @@ const onCreateBucketlist = function (event) {
     .catch(ui.failure)
 }
 
+const onClearBucketlists = (event) => {
+  event.preventDefault()
+  ui.clearBucketlists()
+}
+
 const onUpdateBucketlist = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
@@ -85,6 +90,7 @@ const addHandlers = () => {
   $('#change-password-form').on('submit', onChangePassword)
   $('#sign-out').on('submit', onSignOut)
   $('#bucketlist-form').on('submit', onCreateBucketlist)
+  $('#hideBucketlists').on('click', onClearBucketlists)
   $('#seeBucketlists').on('click', onGetBucketlists)
   $('#bucketlist-update').on('submit', onUpdateBucketlist)
   $('#bucketlist-delete').on('submit', onDeleteBucketlist)

@@ -12,6 +12,10 @@ const signUpSuccess = function (data) {
     $('#signUpModal').modal('hide')
   }, 2000)
   $('#sign-up')[0].reset()
+  setTimeout(function () {
+    $('#signInModal').modal('show')
+  }, 2500)
+  
 }
 
 const signInSuccess = function (data) {
